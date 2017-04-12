@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width:100%;
+    font-family:"Microsoft YaHei";
+    background: #F6F6F8;
+    overflow-x: hidden;
+}
+
+.head {
+    width: 90%;
+    height: 2.05rem;
+    padding:0.5rem 5% 0 5%;
+}
+
+.head .title {
+    height:1.55rem;
+    word-break: break-all;
+    font-size: 0.36rem;
+}
+
+.head .title_bottom {
+    height: 0.1rem;
+    font-size: 0.22rem;
+    line-height: 0.1rem;
+}
+
+.text_box {
+    width: 90%;
+    font-size: 0.25rem;
+    line-height: 0.5rem;
+    padding: 0.1rem 5%;
+}
+
+ img{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.top_loading{
+    position: absolute;
+    top:50%;
+    width: 100%;
+    line-height: 1rem;
+    height: 1rem;
+    font-size: 0.4rem;
+}
+
+.top_loading .radio {
+    display: inline-block;
+    height: 0.3rem;
+    width: 0.3rem;
+    border-radius: 100%;
+    margin: 6px 6px 6px 33% ;
+    border: 1px solid #666;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    -webkit-animation: rotate 0.75s linear infinite;
+    animation: rotate 0.75s linear infinite;
+}
+
+.text_box{
+    font-size:0.3rem;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

@@ -1,0 +1,33 @@
+{
+    "Ret":"1",
+    "ErrInfo":"数据错误",
+    "ShouQuanMa":"",
+    "JiaoYanZhi":"",
+    "Total":"39",
+    "ShuJu":[
+      {
+        "XinXiID":"0",
+        "BiaoTi":"消息标题1",
+        "BiaoTiYanSe":"red",
+        "FaBuRiQi":"2016-06-01",
+        "LianJie":"",
+        "IsYiDu":0
+      },
+      {
+        "XinXiID":"0",
+        "BiaoTi":"消息标题2",
+        "BiaoTiYanSe":"red",
+        "FaBuRiQi":"2016-06-01",
+        "LianJie":"",
+        "IsYiDu":0
+      },
+      {
+        "XinXiID":"0",
+        "BiaoTi":"消息标题3",
+        "BiaoTiYanSe":"red",
+        "FaBuRiQi":"2016-06-01",
+        "LianJie":"",
+        "IsYiDu":0
+      }
+    ]
+}

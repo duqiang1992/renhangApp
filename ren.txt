@@ -1,0 +1,15 @@
+http://192.168.100.7:7107/JieKou/WebApp/listMessage.html?xt=1&zdsbm=BL1qTD0tswI%3d&wybs=wDXXzmwKAYY%3d&sqm=c7isvdvCzJMNPQRavaf9xwwt2FtIsVdzLdK2LHdzw75MasK9XJG9tg%3d%3d
+RenHangAppPlatform 这个数据库
+SELECT ShouQuanMa, * 
+	FROM e_User
+	WHERE ShouQuanMa<>'' 
+
+获取到ShouQuanMa （授权码）后再访问这个页面编码一下：
+
+http://192.168.100.7:7107/JieKou/Debug/CeShiJiaJieMi.aspx 
+
+
+64496688-226 
+
+加密信息中输入查到的ShouQuanMa，然后点击加密按钮，使用“加密并URL编码后 ”的串
+好
