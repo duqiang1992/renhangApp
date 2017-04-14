@@ -3,18 +3,18 @@
   "ErrInfo":"",
   "ShouQuanMa":"",
   "JiaoYanZhi":"",
-  "Total":"2",
+  "Total":"40",
   "ShuJu":[
     {
-      "XinXiID":"0",
+      "XinXiID":"1",
       "BiaoTi":"我在火星的第一天",
       "BiaoTiYanSe":"red",
       "FaBuRiQi":"2016-06-01",
-      "LianJie": "./text.html?xxid",
+      "LianJie": "",
       "IsYiDu":1
     },
     {
-      "XinXiID":"0",
+      "XinXiID":"2",
       "BiaoTi":"消息标题",
       "BiaoTiYanSe":"blue",
       "FaBuRiQi":"2016-08-08",

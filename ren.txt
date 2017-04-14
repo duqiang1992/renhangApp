@@ -1,4 +1,5 @@
-http://192.168.100.7:7107/JieKou/WebApp/listMessage.html?xt=1&zdsbm=BL1qTD0tswI%3d&wybs=wDXXzmwKAYY%3d&sqm=c7isvdvCzJMNPQRavaf9xwwt2FtIsVdzLdK2LHdzw75MasK9XJG9tg%3d%3d
+http://192.168.100.7:7107/JieKou/WebApp/listMessage.html?mrdh=xx&xt=1&zdsbm=BL1qTD0tswI%3d&wybs=wDXXzmwKAYY%3d&sqm=c7isvdvCzJMNPQRavaf9xwwt2FtIsVdzLdK2LHdzw75MasK9XJG9tg%3d%3d
+
 RenHangAppPlatform 这个数据库
 SELECT ShouQuanMa, * 
 	FROM e_User

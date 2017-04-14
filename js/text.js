@@ -35,7 +35,3 @@ $.ajax({
     }
 });
 
-
-window.onpopstate = function(e) {
-    alert(e.state);
-};

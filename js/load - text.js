@@ -86,7 +86,6 @@ history.replaceState({page: 1}, "title 1", "?page=1");
 
 // 点击导航切换
 $('.head').find('div').click(function () {
-    console.log('head');
     if (!$(this).hasClass('click')) {
         clearLoading();
         if ($(this).hasClass('myM')) {
@@ -152,7 +151,7 @@ function list(data) {
         };
 
         if (lj == '' && id != 0) {
-            isGo =  parseInt(item.IsYiDu) == 0?'\'toTextWeiDu\'':'\'toTextYiDu\'';
+            isGo =  parseInt(item.IsYiDu) == 0?'\'toTextWeiDu\'':'\'toTextYiDu\''
             // lianjie = './text.html?xxid=' + id + sQuery(url)
         };
         str += '<a onclick="go.call(this,' + id + ',' + isGo + ')" href="' + lianjie + '"><div title="' + item.BiaoTi + '" class="text-title" style="color:' + item.BiaoTiYanSe + '">'
@@ -227,8 +226,7 @@ function go(id, isGo) {
                 $('.title').css('color', data.ShuJu[0].BiaoTiYanSe).html(data.ShuJu[0].BiaoTi);
                 $('.time').html(data.ShuJu[0].FaBuRiQi);
                 // $('.count').html(data.ShuJu[0].FangWenShu);
-                $('.text_box').html(data.ShuJu[0].NeiRong);
-                $('.returnBtn').show()
+                $('.text_box').html(data.ShuJu[0].NeiRong)
             },
             error:function (xhr,type,error) {
                 $('#loadText').css('textAlign','center').html(error);
@@ -259,21 +257,15 @@ function onMove(e) {
         this.success = true;
     }
     this.difference = e.touches[0].pageX - this.startX;
-    if (Math.abs(this.difference) > Math.abs( this.differenceY)) {
+    if (Math.abs(this.difference) > 15) {
         var setLeft = this.left + this.difference;
         this.ps = setLeft;
         if(strBox=='.myMe'){
-            if(this.difference<0){
-                this.moveSate = true
-            }
-            if(setLeft<40&&setLeft>-screenWidth){
+            if(setLeft<30&&setLeft>-screenWidth){
                 $(this).css('left',setLeft)
             }
         }else{
-            if(this.difference>0){
-                this.moveSate = true
-            }
-            if(setLeft>-40&&setLeft<screenWidth){
+            if(setLeft>-30&&setLeft<screenWidth){
                 $(this).css('left',setLeft)
             }
         }
@@ -281,38 +273,37 @@ function onMove(e) {
 }
 
 function onEnd(e) {
-    $(this).off("touchmove",onMove);
-    $(this).off("touchend", onEnd);
     if(Math.abs(this.differenceY)>Math.abs(this.difference)){
         if(this.success){
             myMessage(url);
         }
-        $(this).animate({left:0}, 200, 'ease-out')
+        $(this).animate({left: this.left}, 200, 'ease-out')
     }
     if(Math.abs(this.differenceY)<=Math.abs(this.difference)){
         clearLoading();
-        if (Math.abs(this.difference) > 100 && this.moveSate) {
+        if (Math.abs(this.difference) > 100) {
             if (this.difference <0) {
+                doClass('.notice');
                 toN();
                 $('.myMe').hide();
                 $(strBox).show();
                 $(this).css('left',screenWidth);
                 $(this).animate({left: 0}, 200, 'ease-out');
-                doClass('.notice');
             }
             if (this.difference > 0) {
+                doClass('.myM');
                 toM();
                 $('.myNo').hide();
                 $(strBox).show();
                 $(this).css('left',-screenWidth);
                 $(this).animate({left: 0}, 200, 'ease-out');
-                doClass('.myM');
             }
-        }else {
-            $(this).animate({left:0}, 200, 'ease-out')
+        } else {
+            $(this).animate({left: 0}, 200, 'ease-out')
         }
     }
-    this.difference = this.success = this.moveSate = this.differenceY = null
+    $('#move').off("touchmove", onMove);
+    $('#move').off("touchend", onEnd);
 }
 
 function readyLoading() {
@@ -347,14 +338,14 @@ function clearLoading() {
     $('.bottom').html('').css('top','95%')
 }
 
-// window.onpopstate = function(event) {
-//     if(GetQueryString('page')==1){
-//         $(that).find('img').attr('src','./images/YiDuXiaoXi.png');
-//         $('.MessageList').show();
-//         $('.MessageContent').hide();
-//         clearText();
-//     }
-// };
+window.onpopstate = function(event) {
+    if(GetQueryString('page')==1){
+        $(that).find('img').attr('src','./images/YiDuXiaoXi.png');
+        $('.MessageList').show();
+        $('.MessageContent').hide();
+        clearText();
+    }
+};
 
 function clearText() {
     $('.headTitle').html('');
@@ -363,11 +354,3 @@ function clearText() {
     // $('.count').html('');
     $('.text_box').html('')
 }
-
-$('.returnBtn').bind('click',function () {
-    $(that).find('img').attr('src','./images/YiDuXiaoXi.png');
-    $('.MessageList').show();
-    $('.MessageContent').hide();
-    clearText();
-    return false
-});
